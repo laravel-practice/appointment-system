@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f2f0e9;
+}
+.nav-wrapper{
+    width: 90%;
+    height: 110px;
+    margin: 0 auto;
+}
+.nav-bar{
+    align-items: center;
+    display: flex;
+    padding-top:10px;
+}
+.logo-section{
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+.logo-text{
+    margin-left: 20px;
+    font-size: 22px;
+}
+.logo-section img{
+    height: 80px;
+    mix-blend-mode: darken;
+}
+.slogan-section{
+    width: 50%;
+}
+.appointment-wrapper{
+    width: 100%;
+    display: flex;
+}
+.appointment-image{
+    height: 523px;
+    width: 900px;
+    background: #ffb202;
+}
+.appointment-image img{
+    width: 100%;
+    mix-blend-mode: luminosity;
+}
+.appointment-form{
+    background: white;
+    width: 50%;
+}
+.form-wrapper{
+    text-align: left;
+    padding: 25px 35px;
+}
+.form{
+    margin-top: 35px;
+}
+.form input {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+}
+.form input:focus {
+    outline: none;
+    border-bottom: 1px solid #c8c4c4;
+}
+.signup-info{
+    margin-top: 5px;
+    color: #bebbbb;
+}
+.ast{
+    color: #a50e0e;
+}
+.error{
+    color: #a50d0e;
+    font-size: 14px;
+}
+.info{
+    font-size: 9px;
+    color: #807b7b;
+}
