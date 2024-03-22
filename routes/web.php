@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+});

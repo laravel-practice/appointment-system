@@ -72,7 +72,6 @@
 @push('js')
 <script>
     $('#signupForm').validate({
-        ignore: [],
         rules: {
             'name': {
                 required: true,
