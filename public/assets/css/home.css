@@ -48,6 +48,7 @@ body{
     background: white;
     width: 50%;
 }
+
 .form-wrapper{
     text-align: left;
     padding: 25px 35px;
@@ -81,4 +82,16 @@ body{
 .info{
     font-size: 9px;
     color: #807b7b;
+}
+
+.profile-section{
+    height: auto;
+    width: 30%;
+}
+.appointment__form{
+    background: white;
+    width: 70%;
+}
+.descriptionView{
+    width: 315px;
 }

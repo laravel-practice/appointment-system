@@ -6,22 +6,15 @@
         </div>
         <div class="slogan-section">
             Effortless scheduling, streamlined appointments.
-            @if (Auth::check())
-                <?php
-                $url = Auth::user()->isAdmin() ? 'admin.dashboard' : 'user.dashboard';
-                ?>
+            <a href="{{ url('/') }}">Make an Appointment</a>
 
-                <a href="{{ route($url) }}">Dashboard</a>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-            @else
-            <a href="{{ url('/') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
-            @endif
+
         </div>
     </div>
 </div>
