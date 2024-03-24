@@ -4,9 +4,9 @@
         {!! session()->get('alert-success') !!}
     </div>
 
-@elseif (session()->has('alert-danger'))
+@elseif (session()->has('error'))
     <div class="alert alert-danger alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        {!! session()->get('alert-danger') !!}
+        {!! session()->get('error') !!}
     </div>
 @endif

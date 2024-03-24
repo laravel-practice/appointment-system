@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use Throwable;
 
@@ -75,6 +76,7 @@ class AdminDashboardController extends Controller
                 ->rawColumns(['appointment_date', 'action', 'appointment_time', 'user.name'])
                 ->toJson();
         } catch (\Exception $e) {
+            Log::error('Error in AdminDashboardController@appointmentData: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to fetch appointment data.'.$e->getMessage()]);
         }
     }
@@ -95,6 +97,7 @@ class AdminDashboardController extends Controller
             }
             return response()->json(['html' => null]);
         } catch (\Exception $e) {
+            Log::error('Error in AdminDashboardController@appointmentLoadData: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to load appointment data.'.$e->getMessage()]);
         }
     }
@@ -123,6 +126,7 @@ class AdminDashboardController extends Controller
                 ->rawColumns(['created_at'])
                 ->toJson();
         } catch (\Exception $e) {
+            Log::error('Error in AdminDashboardController@userData: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to fetch User data.'.$e->getMessage()]);
         }
     }
