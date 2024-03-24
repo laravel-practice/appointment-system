@@ -21,7 +21,7 @@ The Appointment System is a web-based application designed to manage appointment
 - **User Appointment Management:** Authenticated users can book appointments and view their own appointment lists.
 - **Admin Features:**
     - View All Appointments: Admin users have access to view all appointments across the system.
-    - User Management: Admin users can view users, registered in the system.
+    - User Management: Admin user can view the registered users in the system.
 
 ## Installation
 1. Clone the repository.
@@ -67,6 +67,14 @@ The Appointment System is a web-based application designed to manage appointment
     ```bash
     php artisan serve
     ```
+
+Admin login credentials:
+- Email: admin@appointment.com
+- Password: admin123
+
+Dummy user login credentials:
+- Password: password
+
 You can now access the server at http://localhost:8000 or http://127.0.0.1:8000
 
 ## TL;DR Command List
