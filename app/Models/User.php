@@ -43,7 +43,7 @@ class User extends Authenticatable
      * Here 1 is for admin role
      * @return bool
      */
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return $this->role == 1;
     }
@@ -51,7 +51,7 @@ class User extends Authenticatable
     /**
      * @return HasMany
      */
-    public function appointments()
+    public function appointments(): HasMany
     {
         return $this->hasMany(Appointment::class);
     }

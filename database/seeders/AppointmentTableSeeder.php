@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Appointment;
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class AppointmentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(10)->create();
+        Appointment::factory()->count(20)->create();
     }
 }
