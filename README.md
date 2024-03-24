@@ -1,60 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Appointment System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Overview
+The Appointment System is a web-based application designed to manage appointments for normal users. It provides functionality for users to book appointments and for administrators to view appointments and users.
 
-## About Laravel
+## Table of Contents
+1. [Appointment System](#appointment-system)
+2. [Overview](#overview)
+3. [Features](#features)
+4. [Installation](#installation)
+5. [TL;DR Command List](#tl;dr-command-list)
+6. [System Requirements](#system-requirements)
+7. [Dependencies](#dependencies)
+8. [Usage](#usage)
+9. [Contributing](#contributing)
+10. [Authors](#authors)
+11. [License](#license)
+## Features
+- **Multi-User Support:** The system supports both normal users and administrators with different levels of access.
+- **Authentication:** Users need to be authenticated to access the system, ensuring data security.
+- **User Appointment Management:** Authenticated users can book appointments and view their own appointment lists.
+- **Admin Features:**
+    - View All Appointments: Admin users have access to view all appointments across the system.
+    - User Management: Admin users can view users, registered in the system.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
+1. Clone the repository.
+    ```bash
+    https://github.com/laravel-practice/appointment-system
+    ```
+2. Switch to the repo folder
+    ```bash
+    cd appointment-system
+    ```
+3. Install dependencies using Composer:
+    ```bash
+    composer install
+    ```
+4. Copy the example env file and make the required configuration changes in the .env file
+   ```bash
+    cp .env.example .env
+    ```
+5. Generate a new application key
+    ```bash
+    php artisan key:generate
+    ```
+6. Set up the database and configure your `.env` file accordingly.
+   ```bash
+    DB_DATABASE=YourDatabaseName
+    DB_USERNAME=YourDataBaseUserName
+    DB_PASSWORD=YourDataBasePassword
+    ```
+7. Run migrations to create necessary database tables:
+    ```bash
+    php artisan migrate
+    ```   
+8. Seed the database with initial data:
+    - For admin access, run the bellow seeder:
+        ```bash
+        php artisan db:seed --class=AdminUserTableSeeder
+        ```
+    - If you want some dump data with admin access, run this command:
+        ```bash
+        php artisan db:seed
+        ```
+9. Start the local development server
+    ```bash
+    php artisan serve
+    ```
+You can now access the server at http://localhost:8000 or http://127.0.0.1:8000
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## TL;DR Command List
+1. **Clone Repository:** `git clone https://github.com/laravel-practice/appointment-system`
+2. **Install Dependencies:** `composer install`
+3. **Create .env File:** ` cp .env.example .env`
+4. **Set Up Environment:** Configure `.env` file
+4. **Run Migrations:** `php artisan migrate`
+5. **Seed Database (Admin Access):** `php artisan db:seed --class=AdminUserTableSeeder`
+6. **Seed Database (with Dump Data):** `php artisan db:seed`
+7. **Start System:** `php artisan serve`
+8. **Access System:** Navigate to `http://localhost:8000` or `http://localhost:8000` in a web browser
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+   
+## System Requirements
+- PHP = 7*
+- Laravel Framework = 8.0
+- Other dependencies listed in the `composer.json` file.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Dependencies
+- [Fideloper/Proxy](https://github.com/fideloper/Proxy): A package for handling proxy methods for Laravel applications.
+- [Fruitcake/Laravel-Cors](https://github.com/fruitcake/laravel-cors): Adds CORS (Cross-Origin Resource Sharing) support to your Laravel application.
+- [GuzzleHttp/Guzzle](https://github.com/guzzle/guzzle): A PHP HTTP client library for making HTTP requests.
+- [Laravel UI](https://github.com/laravel/ui): Official package for Bootstrap and Vue.js scaffolding.
+- [Yajra/Laravel-Datatables-Oracle](https://github.com/yajra/laravel-datatables-oracle): Laravel DataTables plugin for handling large data tables efficiently.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## Usage
+1. Register as a user or use the provided seeders to populate the database with initial data.
+2. Log in with your credentials.
+3. As a normal user, you can book appointments and view your appointment list.
+4. As an admin user, you have access to view all appointments and users.
 
 ## Contributing
+Contributions are welcome! Feel free to submit pull requests or open issues for any bugs or feature requests.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Authors
+- [Jivan Gautam](https://github.com/lifetoss)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
