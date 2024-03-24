@@ -3,11 +3,16 @@
 @section('content')
     <div class="appointment-wrapper">
         <div class="profile-section">
-            sdjafo sdjafoajofjao
+
+            <div><b>{{ $data['user']['name'] }}</b></div>
+            <div>{{ $data['user']['email'] }}</div>
+            <div>{{ $data['user']['mobile'] }}</div>
+            <div>{{ $data['user']['address'] }}</div>
         </div>
 
         <div class="appointment__form">
-            <table class="table table-striped">
+            <h4>List of Appointment</h4>
+            <table class="table table-striped tableCustom">
                 <thead>
                 <tr>
                     <th scope="col">#</th>

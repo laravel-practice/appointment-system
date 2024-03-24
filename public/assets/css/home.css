@@ -136,8 +136,19 @@ input[type="date"]::placeholder {
     width: 30%;
 }
 .appointment__form{
-    background: white;
+    background: #e2dfdf;
     width: 70%;
+    padding-bottom: 30px;
+}
+.appointment__form h4{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.tableCustom{
+    padding: 16px;
+    width: 95%;
+    margin: 0 auto;
 }
 .descriptionView{
     width: 315px;
@@ -155,4 +166,9 @@ input[type="date"]::placeholder {
 
 .alert{
     padding: 10px;
+}
+.profile-section{
+    background: #fcfcfc;
+    padding: 25px 35px;
+    text-align: center;
 }

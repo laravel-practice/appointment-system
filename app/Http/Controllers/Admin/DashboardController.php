@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class DashboardController extends Controller
     {
         $data = [];
         $id = Auth::id();
+        $data['user'] = User::findOrFail($id);
         $data['appointment'] = Appointment::where('user_id',$id)->orderBy('id','desc')->get();
         return view('user.index',compact('data'));
     }
