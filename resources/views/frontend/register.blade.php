@@ -13,8 +13,8 @@
                 </form>
             </div>
             <div class="form-wrapper">
-                <h2>Create Account to Make Appointment</h2>
-                <p class="signup-info">Streamline your schedule. Sign up now!</p>
+                <h4>Create Account to Make Appointment</h4>
+                <p class="signup-info">Streamline your Appointment. Sign up now!</p>
                 @include('frontend.common.form_validation_message_global')
 
                 <form method="POST" action="{{ route('register') }}" class="form" id="signupForm">
@@ -59,7 +59,7 @@
                         <input type="password" id="password-confirm" name="password_confirmation">
                     </div>
 
-                    <button type="submit" id="form__submit">
+                    <button type="submit" class="form-control btn-success btn" id="form__submit">
                         Submit<i class="icon-arrow-chevrolet"></i>
                     </button>
 
@@ -103,15 +103,15 @@
         },
         messages: {
             'name': {
-                required: "This is a required field.",
+                required: "This field is required.",
                 maxlength:"Please enter no more than 50 characters.",
                 minlength:"Please enter at least 3 characters.",
             },
             'mobile': {
-                required: "This is a required field.",
+                required: "This field is required.",
             },
             'email': {
-                required: "This is a required field.",
+                required: "This field is required.",
                 email: "Please enter a valid email address"
             },
             'password': {

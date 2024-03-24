@@ -9,15 +9,15 @@
         <div class="appointment-form">
             @if (Auth::check())
             <div class="form-wrapper">
-                <h2> Make An Appointment</h2>
-                <p class="signup-info">Streamline your schedule. Sign up now!</p>
+                <h4> Make An Appointment!</h4>
+                <p class="signup-info">Streamline your Appointment. Sign up now!</p>
                 @include('frontend.common.form_validation_message_global')
                 @include('frontend.common.flash_message')
 
                 <form method="POST" action="{{ route('appointment') }}" class="form" id="appointmentForm">
                     @csrf
                     <div>
-                        <label for="title">Appointment Title </label>
+                        <label for="title">Appointment Title <span class="ast">*</span></label>
                         <input id="title" type="text" name="title" value="{{ old('title') }}" >
                         @include('frontend.common.form_validation_message_single', ['for' => 'title'])
                     </div>
@@ -29,18 +29,18 @@
                     </div>
 
                     <div>
-                        <label for="appointment_time">Select Time </label>
+                        <label for="appointment_time">Select Time <span class="ast">*</span></label>
                         <input id="appointment_time" type="time" name="appointment_time">
                         @include('frontend.common.form_validation_message_single', ['for' => 'appointment_time'])
                     </div>
 
                     <div>
-                        <label for="description"> Appointment Description </label>
+                        <label for="description"> Appointment Description <span class="ast">*</span></label>
                         <textarea name="description" id="description" rows="5" class="form-control"></textarea>
                         @include('frontend.common.form_validation_message_single', ['for' => 'description'])
                     </div>
 
-                    <button type="submit" id="form__submit">
+                    <button type="submit" class="form-control btn btn-success" id="form__submit">
                         Submit<i class="icon-arrow-chevrolet"></i>
                     </button>
 
@@ -48,7 +48,7 @@
             </div>
             @else
             <div class="form-wrapper">
-                <h2>Login to Make Appointment</h2>
+                <h4>Login to Make Appointment</h4>
 {{--                <p class="signup-info">Streamline your schedule. Sign up now!</p>--}}
 
                 <form method="POST" action="{{ route('login') }}" class="form" id="loginForm">
@@ -65,7 +65,7 @@
                         @include('frontend.common.form_validation_message_single', ['for' => 'password'])
                     </div>
 
-                    <button type="submit" id="form__submit">
+                    <button type="submit" class="form-control btn btn-success" id="form__submit">
                         Submit<i class="icon-arrow-chevrolet"></i>
                     </button>
 

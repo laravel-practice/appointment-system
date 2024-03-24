@@ -7,13 +7,13 @@ body{
 }
 .nav-wrapper{
     width: 90%;
-    height: 110px;
+    height: 95px;
     margin: 0 auto;
 }
 .nav-bar{
     align-items: center;
     display: flex;
-    padding-top:10px;
+    padding-top:9px;
 }
 .logo-section{
     display: flex;
@@ -28,16 +28,40 @@ body{
     height: 80px;
     mix-blend-mode: darken;
 }
+.form-wrapper h4{
+    margin-bottom:0px;
+}
 .slogan-section{
     width: 50%;
+    text-align: right;
 }
+.slogan-section-info{
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+.slogan-section-btn a{
+    color: rgb(207 146 7);
+    text-decoration: none;
+    border: 1px solid #feb100;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.slogan-section-btn a:hover{
+    color: white;
+    background: #feb100;
+}
+
+.slogan-section-btn a:first-child{
+    margin-right: 25px;
+}
+
 .appointment-wrapper{
     width: 100%;
     display: flex;
 }
 .appointment-image{
-    height: 523px;
-    width: 900px;
+    height: auto;
     background: #ffb202;
 }
 .appointment-image img{
@@ -54,22 +78,45 @@ body{
     padding: 25px 35px;
 }
 .form{
-    margin-top: 35px;
+    margin-top: 15px;
 }
 .form input {
     width: 100%;
-    padding: 8px 20px;
+    padding: 0px 20px 0px 0px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #eaeaea;
 }
+#form__submit{
+    margin-top: 15px;
+    padding: 7px 0px;
+}
+#form__submit:focus{
+    box-shadow: none;
+    border-color:#198754;
+}
+.form div {
+    margin-top: 2px;
+}
 .form input:focus {
     outline: none;
     border-bottom: 1px solid #c8c4c4;
 }
+input[type="date"]::placeholder {
+    color: #999; /* Placeholder text color */
+    font-style: italic; /* Placeholder text style */
+    /* Add any additional styles you want */
+}
+#description{
+    margin-top: 12px;
+}
+#description:focus {
+    box-shadow: none;
+    border-color:#eaeaea;
+}
 .signup-info{
-    margin-top: 5px;
+    margin-top: 1px;
     color: #bebbbb;
 }
 .ast{
@@ -94,4 +141,18 @@ body{
 }
 .descriptionView{
     width: 315px;
+}
+.errorWrapper{
+    background: #f8f8f8;
+    padding: 15px;
+}
+.footer{
+    width: 100%;
+    color: #0c0c0c;
+    text-align: center;
+    padding: 7px;
+}
+
+.alert{
+    padding: 10px;
 }

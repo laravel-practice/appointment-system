@@ -1,8 +1,10 @@
 @if ($errors->any())
-    @foreach ($errors->all() as $error)
-        <div class="error">
-           {{ $error }}</li>
-        </div>
-    @endforeach
+    <div class="errorWrapper">
+        @foreach ($errors->all() as $error)
+            <div class="error">
+                {{ $error }}</li>
+            </div>
+        @endforeach
+    </div>
 @endif
 
