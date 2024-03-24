@@ -22,10 +22,13 @@ class AppointmentFactory extends Factory
      */
     public function definition()
     {
+        $startDate = now()->startOfYear();
+        $endDate = now()->endOfYear();
+        $randomDate = $this->faker->dateTimeBetween($startDate, $endDate);
         return [
             'title' => $this->faker->sentence,
             'user_id' => \App\Models\User::factory(),
-            'appointment_date' => $this->faker->date,
+            'appointment_date' => $randomDate,
             'appointment_time' => $this->faker->time('H:i'),
             'description' => $this->faker->paragraph,
         ];
