@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f2f0e9;
+}
+.mainWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.sideNavBar{
+    width: 20%;
+    background: black;
+}
+
+.displaySection{
+    width: 80%;
+}
+.descriptionView{
+    width: 315px;
+
+}
