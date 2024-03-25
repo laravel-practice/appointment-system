@@ -115,7 +115,7 @@
                 email: "Please enter a valid email address"
             },
             'password': {
-                minlength: "Password must be at least 10 characters long",
+                minlength: "Password must be at least 8 characters long",
                 alphanumeric: "Password must contain only letters and numbers"
             },
             'password-confirm': {
