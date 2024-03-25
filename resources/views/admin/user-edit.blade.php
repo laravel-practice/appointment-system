@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <div class="login-form">
+                        <div class="login-forms">
                             @include('frontend.common.form_validation_message_global')
                             @include('frontend.common.flash_message')
 
