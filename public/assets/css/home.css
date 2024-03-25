@@ -26,7 +26,7 @@ body{
 }
 .logo-section img{
     height: 80px;
-    mix-blend-mode: darken;
+    mix-blend-mode: hard-light;
 }
 .form-wrapper h4{
     margin-bottom:0px;
@@ -87,6 +87,8 @@ body{
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #eaeaea;
+    color: #918f8f;
+
 }
 #form__submit{
     margin-top: 15px;
@@ -103,11 +105,7 @@ body{
     outline: none;
     border-bottom: 1px solid #c8c4c4;
 }
-input[type="date"]::placeholder {
-    color: #999; /* Placeholder text color */
-    font-style: italic; /* Placeholder text style */
-    /* Add any additional styles you want */
-}
+
 #description{
     margin-top: 12px;
 }
@@ -175,4 +173,11 @@ input[type="date"]::placeholder {
 .pagination{
     margin-left: 21px;
     margin-top: 20px;
+}
+.common_btn{
+    width: 35px;
+    padding: 0px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 0px;
 }

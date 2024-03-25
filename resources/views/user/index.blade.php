@@ -33,7 +33,7 @@
                         <td>{{ convertToAmPm($row['appointment_time']) }}</td>
                         <td>  {{ \Illuminate\Support\Str::limit($row['description'],50)  }}</td>
                         <td>
-                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$row['id']}}">
+                            <button type="button" class="btn btn-sm btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal{{$row['id']}}">
                                 View
                             </button>
                         @include('user.view')

@@ -26,7 +26,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'password' => bcrypt('password'),
-            'mobile' => $this->faker->phoneNumber,
+            'mobile' => substr(preg_replace('/[^0-9]/', '', $this->faker->phoneNumber), 0, 10),
             'address' => $this->faker->address,
             'role' => 0,
             'remember_token' => Str::random(10),

@@ -49,7 +49,7 @@ body{
 }
 .topNav img{
     width: 50px;
-    mix-blend-mode: darken;
+    mix-blend-mode: hard-light;
 }
 .breadcrumbs{
     background: #fefefe;
@@ -178,6 +178,7 @@ tbody, td, tfoot, th, thead, tr {
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #eaeaea;
+    color: #918f8f;
 }
 .form div {
     margin-top: 2px;
@@ -194,4 +195,15 @@ tbody, td, tfoot, th, thead, tr {
 .error{
     color: #a50d0e;
     font-size: 14px;
+}
+
+.common_btn{
+    width: 35px;
+    padding: 0px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 0px;
+}
+.common_tag{
+    padding-top: 5px;
 }
