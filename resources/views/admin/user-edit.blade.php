@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <div class="login-form login-form--full">
+                        <div class="login-form">
                             @include('frontend.common.form_validation_message_global')
                             @include('frontend.common.flash_message')
 
@@ -79,4 +79,40 @@
 @endsection
 
 @push('js')
+    <script>
+        $('#editUser').validate({
+            rules: {
+                'name': {
+                    required: true,
+                },
+                'mobile': {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10
+                },
+                'address': {
+                    required: true,
+                },
+                'password': {
+                    required: true,
+                },
+            },
+            messages: {
+                'name': {
+                    required: "This field is required.",
+                },
+                'mobile': {
+                    required: "This field is required.",
+                },
+
+            },
+
+            submitHandler: function(form) {
+                $('#form__submit').prop('disabled', true).html('Submitting Data');
+                form.submit();
+            }
+        });
+
+    </script>
 @endpush
