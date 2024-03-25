@@ -30,8 +30,10 @@ class UserTypeMiddleware
                 }
                 return redirect()->route('user.dashboard');
             }
+        }else{
+            return redirect()->route('login');
         }
-        return $next($request);
+
     }
 
 }
