@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $data = [];
         $id = Auth::id();
         $data['user'] = User::findOrFail($id);
-        $data['appointment'] = Appointment::where('user_id',$id)->orderBy('id','desc')->get();
+        $data['appointment'] = Appointment::where('user_id',$id)->orderBy('id','desc')->paginate(10);
         return view('user.index',compact('data'));
     }
 }

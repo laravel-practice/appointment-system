@@ -101,7 +101,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         $this->create($request->all());
-        return redirect('/');
+        return redirect('/')->with('alert-success', 'User Register Successfully.');
 
     }
 

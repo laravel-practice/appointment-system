@@ -1,28 +1,28 @@
 @extends('admin.layouts.layout')
 
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-6">
-            <h2> Management</h2>
+        <div class="breadcrumbs">
+            <h2> Appointment</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    <a href="">panel</a>
+                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
 
                 <li class="breadcrumb-item">
-                    <strong>hello</strong>
+                    <strong>Appointment</strong>
                 </li>
             </ol>
         </div>
 
-        <div class="row">
+        <p>
+            @include('frontend.common.flash_message')
+        </p>
+
+        <div class="tableWrapper">
             <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>News</h5>
+                        <h5>Appointments</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -52,7 +52,6 @@
         </div>
         @include('admin.common.modal-box')
 
-    </div>
 
 @endsection
 
@@ -87,8 +86,8 @@
                     },
                     success: function(response) {
                         if (response.html) {
-                            $('.dataWrapperAppointment').empty().html(response.html);
-                            $('#exampleModalAppointment').modal('show');
+                            $('.dataWrapperData').empty().html(response.html);
+                            $('#exampleModalData').modal('show');
                         } else {
                             toastr.error('No Record found.');
                         }

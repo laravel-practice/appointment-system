@@ -1,7 +1,7 @@
 # Appointment System
 
 ## Overview
-The Appointment System is a web-based application designed to manage appointments for normal users. It provides functionality for users to book appointments and for administrators to view appointments and users.
+The Appointment System is a web-based application designed to manage appointments for normal users. It provides functionality for users to book appointments and for administrators to view and manage appointments and users.
 
 ## Table of Contents
 1. [Appointment System](#appointment-system)
@@ -21,8 +21,8 @@ The Appointment System is a web-based application designed to manage appointment
 - **User Appointment Management:** Authenticated users can book appointments and view their own appointment lists.
 - **Admin Features:**
     - View All Appointments: Admin users have access to view all appointments across the system.
-    - User Management: Admin user can view the registered users in the system.
-
+    - Manage Appointments: Admin users can view and manage appointments in the system.
+    - User Management: Admin users can view and manage registered users in the system.
 ## Installation
 1. Clone the repository.
     ```bash

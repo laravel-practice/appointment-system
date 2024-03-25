@@ -10,15 +10,188 @@ body{
     height: 100%;
     display: flex;
 }
-.sideNavBar{
-    width: 20%;
-    background: black;
+
+.sideNavBar {
+    height: 100%;
+    width: 225px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
+.sideNavBar a {
+    padding: 4px 8px 4px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sideNavBar a:hover {
+    color: #f1f1f1;
+}
+
+
 .displaySection{
-    width: 80%;
+    margin-left: 225px;
+    width: 100%;
 }
 .descriptionView{
     width: 315px;
+}
+.topNav{
+    text-align: center;
+    padding: 10px 0px;
+}
+.topNav img{
+    width: 50px;
+    mix-blend-mode: darken;
+}
+.breadcrumbs{
+    background: #fefefe;
+    padding: 2px 20px;
+}
+.footer{
+    background: black;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+}
 
+
+
+table, td, th {
+    border: 1px solid #dee2e6;
+    color:#676a6c !important;
+
+}
+
+table tr td {
+    color:#676a6c !important;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+table.dataTable {
+    border-collapse: collapse !important;
+}
+table.dataTable.no-footer {
+    border: 1px solid #dee2e6 !important;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: #dee2e6 !important;
+}
+
+
+
+
+
+.ibox {
+    clear: both;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0;
+}
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 2px 0 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 15px 90px 8px 15px;
+    min-height: 48px;
+    position: relative;
+    clear: both;
+}
+.ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: none;
+}
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+.tableWrapper{
+    margin-top: 30px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+}
+
+.dashboardPanel{
+    background: #fefefe;
+    height: 530px;
+    text-align: center;
+    align-content: center;
+}
+
+.bootbox-close-button {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+
+
+.form-wrapper{
+    text-align: left;
+    padding: 25px 35px;
+}
+.form{
+    margin-top: 15px;
+}
+.form input {
+    width: 100%;
+    padding: 0px 20px 0px 0px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+}
+.form div {
+    margin-top: 2px;
+}
+.form input:focus {
+    outline: none;
+    border-bottom: 1px solid #c8c4c4;
+}
+
+.errorWrapper{
+    background: #f8f8f8;
+    padding: 15px;
+}
+.error{
+    color: #a50d0e;
+    font-size: 14px;
 }

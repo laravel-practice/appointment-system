@@ -49,7 +49,9 @@
             @else
             <div class="form-wrapper">
                 <h4>Login to Make Appointment</h4>
-{{--                <p class="signup-info">Streamline your schedule. Sign up now!</p>--}}
+                <p class="signup-info">
+                    @include('frontend.common.flash_message')
+                </p>
 
                 <form method="POST" action="{{ route('login') }}" class="form" id="loginForm">
                     @csrf

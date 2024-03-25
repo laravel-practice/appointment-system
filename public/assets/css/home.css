@@ -172,3 +172,7 @@ input[type="date"]::placeholder {
     padding: 25px 35px;
     text-align: center;
 }
+.pagination{
+    margin-left: 21px;
+    margin-top: 20px;
+}

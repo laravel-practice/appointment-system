@@ -1,28 +1,24 @@
 @extends('admin.layouts.layout')
 
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-6">
-            <h2> Management</h2>
+        <div class="breadcrumbs">
+            <h2> User </h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    <a href="">panel</a>
+                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
 
                 <li class="breadcrumb-item">
-                    <strong>hello</strong>
+                    <strong>Users</strong>
                 </li>
             </ol>
         </div>
 
-        <div class="row">
+        <div class="tableWrapper">
             <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>News</h5>
+                        <h5>Users</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -39,8 +35,8 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
-                                        <th>Address</th>
                                         <th>Created At</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -52,7 +48,6 @@
         </div>
         @include('admin.common.modal-box')
 
-    </div>
 
 @endsection
 
@@ -70,12 +65,36 @@
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
                     {data: 'mobile', name: 'mobile'},
-                    {data: 'address', name: 'address'},
                     {data: 'created_at', name: 'created_at', sortable: false, searchable: false},
+                    {data: 'action', name: 'action', sortable: false, searchable: false},
 
                 ]
             });
         });
+
+        $(document).ready(function() {
+            $(document).on('click','.showData',function (){
+                var id = $(this).data('id');
+                $.ajax({
+                    url: '{{ route('admin.user.load-data') }}',
+                    data:{
+                        id: id,
+                    },
+                    success: function(response) {
+                        if (response.html) {
+                            $('.dataWrapperData').empty().html(response.html);
+                            $('#exampleModalData').modal('show');
+                        } else {
+                            toastr.error('No Record found.');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        toastr.error('Something went wrong. Please try again later.');
+                    }
+                });
+            });
+        })
+
 
     </script>
 @endpush

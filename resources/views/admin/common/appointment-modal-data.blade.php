@@ -14,23 +14,23 @@
         <tbody>
         <tr>
             <td>Title</td>
-            <td>: {{ $appointment['title'] }}</td>
+            <td>{{ $appointment['title'] }}</td>
         </tr>
         <tr>
             <td>User Name</td>
-            <td>: {{ $appointment->user->name }}</td>
+            <td>{{ $appointment->user->name }}</td>
         </tr>
         <tr>
             <td>Appointment Date</td>
-            <td>: {{ convertDate($appointment['appointment_date']) }}</td>
+            <td>{{ convertDate($appointment['appointment_date']) }}</td>
         </tr>
         <tr>
             <td>Appointment Time</td>
-            <td>: {{ convertToAmPm($appointment['appointment_time']) }}</td>
+            <td>{{ convertToAmPm($appointment['appointment_time']) }}</td>
         </tr>
         <tr>
             <td>Description</td>
-            <td class="descriptionView">: {{ $appointment['description'] }}</td>
+            <td class="descriptionView">{{ $appointment['description'] }}</td>
         </tr>
 
 

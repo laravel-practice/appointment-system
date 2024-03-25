@@ -1,8 +1,8 @@
 @extends('admin.layouts.layout')
 
 @section('content')
-    <div>
-        <h2>wel come to admin panel</h2>
+    <div class="dashboardPanel">
+        <h2>Wel Come To Admin Panel</h2>
     </div>
 @endsection
 

@@ -48,7 +48,7 @@
                         <input type="password" id="password" name="password">
                         <div>
                             <code id="password-info" class="info">
-                                Password must be at least 10 characters long and contain only letters and numbers.
+                                Password must be at least 8 characters long and contain only letters and numbers.
                             </code>
                         </div>
                         @include('frontend.common.form_validation_message_single', ['for' => 'password'])
@@ -93,7 +93,7 @@
             },
             'password': {
                 required: true,
-                minlength: 10,
+                minlength: 8,
                 alphanumeric: true
             },
             'password-confirm': {
