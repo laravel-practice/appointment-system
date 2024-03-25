@@ -10,9 +10,8 @@
           style="display: inline-block">
         <input name="_method" type="hidden" value="DELETE">
         {{csrf_field()}}
-        <button class="btn btn-danger btn-xs btn-delete-record common_btn"
-                type="button">
-            Del
+        <button class="btn btn-danger btn-xs btn-delete-record common_btn" type="button">
+            Delete
         </button>
     </form>
 

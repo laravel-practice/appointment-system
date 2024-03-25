@@ -11,7 +11,7 @@
         {{csrf_field()}}
         <button class="btn btn-danger btn-xs btn-delete-record common_btn"
                 type="button">
-            Del
+            Delete
         </button>
     </form>
 </div>
