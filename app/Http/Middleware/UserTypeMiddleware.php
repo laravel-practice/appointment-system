@@ -12,7 +12,7 @@ class UserTypeMiddleware
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param  \Closure  $next
+     * @param \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
@@ -30,10 +30,8 @@ class UserTypeMiddleware
                 }
                 return redirect()->route('user.dashboard');
             }
-        }else{
+        } else {
             return redirect()->route('login');
         }
-
     }
-
 }
