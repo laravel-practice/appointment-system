@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\admin;
 
+use App\Models\Appointment;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -57,6 +58,12 @@ class AdminDashboardControllerTest extends TestCase
             ->assertSessionHas('alert-success');
 
         $this->assertDatabaseMissing('users', ['id' => $nonAdminUser['id']]);
+    }
+
+    public function testUserAppointmentExists()
+    {
+        $user = User::factory()->has(Appointment::factory())->create();
+        dd($user->appointments);
     }
 
 }
