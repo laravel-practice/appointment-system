@@ -11,6 +11,20 @@ class AdminDashboardControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    private $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->user = User::factory();
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        $this->user = null;
+    }
+
     public function testUnauthorizedUserCannotAccessAdminDashboard(): void
     {
         $response = $this->get(route('admin.dashboard'));
@@ -20,19 +34,18 @@ class AdminDashboardControllerTest extends TestCase
 
     public function testAuthorizedUserCanAccessAdminDashboard(): void
     {
-        $role = 1;
-        $user = $this->createUser($role);
-        $response = $this->actingAs($user)->get(route('admin.dashboard'));
-        $response->assertStatus(200);
+        $user = $this->user->createOne(['role' => 1]);
+        $this->actingAs($user)->get(route('admin.dashboard'))
+            ->assertOk();
     }
 
     public function testAdminUserCanDeleteNonAdminUserData()
     {
         // create admin user
-        $adminUser = $this->createUser(1);
+        $adminUser = $this->user->createOne(['role' => 1]);
 
         // create non-admin user
-        $nonAdminUser = $this->createUser(0);
+        $nonAdminUser = $this->user->createOne(['role' => 0]);
 
         // Create history to support 'redirect()->back()' in actual controller
         $this->actingAs($adminUser)
@@ -44,11 +57,6 @@ class AdminDashboardControllerTest extends TestCase
             ->assertSessionHas('alert-success');
 
         $this->assertDatabaseMissing('users', ['id' => $nonAdminUser['id']]);
-    }
-
-    protected function createUser($role): Model
-    {
-        return User::factory()->createOne(['role'=>$role]);
     }
 
 }

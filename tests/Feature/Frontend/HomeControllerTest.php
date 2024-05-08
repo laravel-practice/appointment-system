@@ -10,6 +10,20 @@ class HomeControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    private $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->user = User::factory()->createOne(['role'=>0]);
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        $this->user = null;
+    }
+
     public function testPageIsAccessible()
     {
         $this->get('/')
@@ -42,8 +56,7 @@ class HomeControllerTest extends TestCase
         ];
 
         // user login
-        $user = User::factory()->createOne(['role'=>0]);
-        $this->actingAs($user);
+        $this->actingAs($this->user);
 
         // send form with missing field
         $this->post(route('appointment'), $formData)
@@ -59,8 +72,7 @@ class HomeControllerTest extends TestCase
     public function testLoggedInUserCanCreateAppointment()
     {
         // user login
-        $user = User::factory()->createOne(['role'=>0]);
-        $this->actingAs($user);
+        $this->actingAs($this->user);
 
         $formData = [
             'title' => 'hello appointment',
@@ -71,6 +83,6 @@ class HomeControllerTest extends TestCase
 
         $this->post(route('appointment'), $formData)
             ->assertSessionHas('alert-success');
-        $this->assertDatabaseHas('appointments', ['user_id' => $user['id']]);
+        $this->assertDatabaseHas('appointments', ['user_id' => $this->user['id']]);
     }
 }
