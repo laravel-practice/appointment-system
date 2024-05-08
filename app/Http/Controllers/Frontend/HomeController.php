@@ -28,8 +28,11 @@ class HomeController extends Controller
      */
     public function appointment(FormValidation $request): RedirectResponse
     {
+        // function specific middleware auth
         try {
             $user = Auth::user();
+
+            // TODO move auth check to middleware and protect this method via route file
             if (!$user) {
                 throw new \Exception("User not authenticated.");
             }
@@ -47,6 +50,8 @@ class HomeController extends Controller
             Appointment::create($data);
 
             return redirect()->back()->with('alert-success', 'Created Successfully.');
+
+            // TODO move exception and log to log service class
         } catch (\Exception $e) {
             Log::error('Error in HomeController@appointment: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred. Please try again later.');

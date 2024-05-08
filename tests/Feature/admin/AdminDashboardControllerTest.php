@@ -10,7 +10,7 @@ use Tests\TestCase;
 class AdminDashboardControllerTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function testUnauthorizedUserCannotAccessAdminDashboard(): void
     {
         $response = $this->get(route('admin.dashboard'));

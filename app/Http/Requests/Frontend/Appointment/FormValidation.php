@@ -25,8 +25,8 @@ class FormValidation extends FormRequest
     {
         return [
             'title' => 'required',
-            'appointment_date' => 'required',
-            'appointment_time' => 'required',
+            'appointment_date' => 'required|date',
+            'appointment_time' => 'required|date_format:H:i',
             'description' => 'required',
         ];
     }
